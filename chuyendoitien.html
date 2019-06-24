@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyendoitiente</title>
+</head>
+<body>
+<form>
+    <h1> Chuyển đổi tiền tệ </h1>
+
+    Amount
+    <br>
+    <input id ="so1" type ="number">
+
+     Form currency:
+
+
+    <select id="so2" name = "Form currency ">
+        <option value ="VND" > VND</option>
+        <option value="USD" > USD </option>
+    </select>
+    To currency:
+    <select id="so3" name = " To currency ">
+
+        <option value ="VND" selected> VND</option>
+        <option value="USD" selected> USD </option>
+    </select>
+    <br>
+    <button  type="button" value=" Convert" onclick="convert()">Convert  </button>
+    <p id="demo"></p>
+</form>
+
+
+
+<script>
+    function convert() {
+        let so1 = document.getElementById("so1").value;
+
+        let so2 =document.getElementById("so2").value;
+        let so3 =document.getElementById("so3").value;
+
+        if (so2 === 'USD' && so3 === 'VND') {
+            let ketQua = so1 * 23000;
+            document.getElementById("demo").innerHTML = ketQua;
+        }
+        else if (so2==='VND' && so3==='USD'){
+            let ketQua = so1 / 23000;
+            document.getElementById("demo").innerHTML = ketQua;
+        }
+
+
+
+    }
+</script>
+
+</body>
+</html>
